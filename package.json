@@ -1,0 +1,14 @@
+{
+  "name": "get-subscriptions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dynamodb-doc": "^1.0.0"
+  }
+}
