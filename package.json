@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dynamodb-doc": "^1.0.0"
+    "dynamodb-doc": "^1.0.0",
+    "node-uuid": "^1.4.8",
+    "uuid": "^3.3.2"
   }
 }
