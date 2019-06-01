@@ -5,16 +5,18 @@ var docClient = dynamo.DocumentClient();
 
 // event needs to pass in both email and productCode
 exports.handler = (event, context, callback) => {
- 
+
     var params = {
         TableName: 'product-subscriptions',
-        key:{
-            "email" : event.email,
-            "productCode" : productCevent.productCodeode
+        IndexName: 'email-productCode-index',
+        KeyConditionExpression: "email = :email and productCode = :productCode",
+        ExpressionAttributeValues: {
+            ":email": event.email,
+            ":productCode": event.productCodeode
         }
     };
 
-    // delete the item that matches the email and productCode, note email and productCode combination should be unique
+    // delete the item that matches the email and productCode provided as input. Note: email and productCode combination should be unique.
     console.log("Attempting a conditional delete based on email and productCode....");
     docClient.delete(params, function (err, data) {
         if (err) {
