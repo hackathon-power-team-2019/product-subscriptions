@@ -12,7 +12,7 @@ exports.handler = (event, context, callback) => {
         KeyConditionExpression: "email = :email and productCode = :productCode",
         ExpressionAttributeValues: {
             ":email": event.email,
-            ":productCode": event.productCodeode
+            ":productCode": event.productCode
         }
     };
 
