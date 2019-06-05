@@ -11,7 +11,8 @@ exports.handler = (event, context, callback) => {
         Item: {
             id: uuidv1(),
             "email": event.email,
-            "productCode": event.productCode
+            "productCode": event.productCode,
+            "productName": event.productName
         }
     }, function(err, data) {
         if (err) {
