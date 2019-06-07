@@ -9,9 +9,10 @@ exports.handler = (event, context, callback) => {
     dynamo.putItem({
         TableName: "product-subscriptions",
         Item: {
-            id: uuidv1(),
+ //           id: uuidv1(),
  //           "productCode": event.productCode,
  //           "productName": event.productName
+             ':id': { 'S': event.id },
              ':email': { 'S': event.email },
              ':productCode': { 'S': event.productCode },
              ':productName': { 'S': event.productName }            
