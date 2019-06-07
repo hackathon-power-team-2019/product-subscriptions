@@ -10,9 +10,11 @@ exports.handler = (event, context, callback) => {
         TableName: "product-subscriptions",
         Item: {
             id: uuidv1(),
-            "email": event.email,
-            "productCode": event.productCode,
-            "productName": event.productName
+ //           "productCode": event.productCode,
+ //           "productName": event.productName
+             ':email': { 'S': event.email },
+             ':productCode': { 'S': event.productCode },
+             ':productName': { 'S': event.productName }            
         }
     }, function(err, data) {
         if (err) {
